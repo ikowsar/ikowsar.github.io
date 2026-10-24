@@ -113,7 +113,10 @@ const NEWS = [
     date: "October 2026",
     content: "Our paper on Concept-Guided Retention (CGR), which uses sparse autoencoder concepts to reduce forgetting in parameter-efficient fine-tuning, is now on arXiv.",
     type: "Preprint",
-    color: "from-emerald-500 to-green-500"
+    color: "from-emerald-500 to-green-500",
+    link: "https://arxiv.org/abs/2610.17713",
+    image: "/assets/img/cgr_overview.png",
+    imageCaption: "CGR confines the weight update to task concepts and anchors retained concepts to the frozen model, both read from one frozen SAE."
   },
   {
     date: "October 2026",
@@ -525,6 +528,21 @@ export default function App() {
                       <p className="text-sm text-slate-800 dark:text-slate-200 font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                         {item.content}
                       </p>
+                      {item.image && (
+                        <figure className="mt-3">
+                          <a href={item.image} target="_blank" rel="noopener noreferrer" className="block rounded-md overflow-hidden border border-slate-200 dark:border-slate-700 bg-white">
+                            <img src={item.image} alt={item.imageCaption} loading="lazy" className="w-full h-auto" />
+                          </a>
+                          {item.imageCaption && (
+                            <figcaption className="mt-2 text-xs text-slate-500 dark:text-slate-400">{item.imageCaption}</figcaption>
+                          )}
+                        </figure>
+                      )}
+                      {item.link && (
+                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-2 px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 text-xs font-bold uppercase tracking-wide transition-colors">
+                          <ExternalLink size={10} /> Read the paper
+                        </a>
+                      )}
                    </div>
                 ))}
               </div>
