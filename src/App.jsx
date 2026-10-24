@@ -116,6 +116,12 @@ const NEWS = [
     color: "from-emerald-500 to-green-500"
   },
   {
+    date: "October 2026",
+    content: "Attended COLM 2026 in San Francisco.",
+    type: "Conference",
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
     date: "June 2026",
     content: "Presented 'A Benchmark Study on the Reliability of Explainability Methods' at the CVPR 2026 XAI4CV Workshop in Denver.",
     type: "Conference",
