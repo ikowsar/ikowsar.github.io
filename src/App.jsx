@@ -30,63 +30,70 @@ const PROFILE = {
   location: "Davis, CA",
   email: "ikowsar@ucdavis.edu",
   scholarUrl: "https://scholar.google.com/citations?user=kJI4lecAAAAJ&hl=en",
-  githubUrl: "https://github.com/kawseribn",
+  githubUrl: "https://github.com/ikowsar",
   linkedinUrl: "https://www.linkedin.com/in/ikowsar/",
   researchGateUrl: "https://www.researchgate.net/profile/Ibna-Kowsar",
-  cvUrl: "/assets/papers/CV_Ibna_Kowsar__short_ (1).pdf", 
-  bio: `I am a Ph.D. student in Computer Science at the University of California, Davis. My research focuses on the intersection of Deep Learning, Computer Vision, and Healthcare Informatics. I am driven by the need to make deep learning models interpretable, ensuring that AI systems are transparent and trustworthy enough for critical tasks like medical diagnosis.
-  
-  Before starting my Ph.D., I worked as a Research Associate at the CIDA Lab at Tennessee State University and as a Machine Learning Engineer at Apurba Technologies.`,
+  cvUrl: "/assets/papers/CV_Ibna_Kowsar.pdf",
+  bio: `I am a Ph.D. student in Computer Science at the University of California, Davis, advised by Prof. Xin Liu, and a GGCS Ignite Fellow. My research is on mechanistic interpretability and parameter-efficient fine-tuning of large language and vision-language models. I use sparse autoencoders and attribution methods to study why models lose pre-trained knowledge during fine-tuning and how to reduce that loss. In my recent work, Concept-Guided Retention (CGR), a frozen sparse autoencoder identifies the concepts inside the model, and the regularizer keeps the general-purpose concepts stable while the adapter learns the new task.
+
+  Before starting my Ph.D., I completed my M.Sc. in Computer Science at Tennessee State University, where I worked in the CIDA Lab on missing value imputation and transfer learning for tabular and EHR data. I also worked as a Machine Learning Engineer at Apurba Technologies and as a Lecturer at BRAC University.`,
   interests: [
-    "Deep Learning Model Interpretability",
-    "Large Language Models (LLMs)",
-    "Cross-Domain Transfer Learning",
-    "Electronic Health Records (EHR) Analysis",
-    "Self-supervised Learning"
+    "Mechanistic Interpretability",
+    "Sparse Autoencoders",
+    "Parameter-Efficient Fine-Tuning",
+    "Continual Learning",
+    "Transfer Learning",
+    "Large Language & Vision-Language Models"
   ]
 };
 
 const SKILL_GROUPS = [
   {
-    category: "Programming Languages",
-    icon: Code,
-    skills: ["Python", "Java", "C++", "C", "SQL", "Bash"]
-  },
-  {
-    category: "Machine Learning & AI",
+    category: "Interpretability & LLMs",
     icon: Brain,
-    skills: ["Deep Learning", "Computer Vision", "LLMs", "Explainable AI", "Transfer Learning", "Transformers", "Self-Supervised Learning"]
+    skills: ["Sparse Autoencoders", "TransformerLens", "SAELens", "Captum", "Activation Patching", "Attribution", "Probing", "Model Steering", "LoRA/QLoRA", "vLLM"]
   },
   {
-    category: "Frameworks & Libraries",
+    category: "Deep Learning & Training",
     icon: Layers,
-    skills: ["PyTorch", "TensorFlow", "Keras", "Scikit-learn", "Pandas", "NumPy", "OpenCV", "Matplotlib"]
+    skills: ["PyTorch", "Hugging Face Transformers", "PEFT", "Accelerate", "DeepSpeed", "FSDP", "Multi-GPU", "FlashAttention"]
   },
   {
-    category: "Tools & Platforms",
+    category: "ML & Vision",
+    icon: Code,
+    skills: ["Python", "Bash", "SQL", "Scikit-learn", "OpenCV", "OpenCLIP", "einops", "Contrastive Learning", "Domain Adaptation", "Knowledge Distillation"]
+  },
+  {
+    category: "Infrastructure",
     icon: Terminal,
-    skills: ["Git", "Docker", "AWS", "LaTeX", "Flask", "FastAPI", "Vercel", "Linux"]
+    skills: ["SLURM", "Ray", "Docker", "Weights & Biases", "Hydra", "AWS (EC2/S3)", "GCP", "Flask", "FastAPI"]
   }
 ];
 
 const EXPERIENCE = [
   {
-    role: "Research Associate",
-    company: "CIDA Lab, Tennessee State University",
-    period: "July 2025 - Aug 2025",
-    desc: "Advancing deep learning and transfer learning techniques for medical imaging and EHR data."
+    role: "Graduate Researcher",
+    company: "University of California, Davis (advised by Prof. Xin Liu)",
+    period: "Sep 2025 - Present",
+    desc: "Designed Concept-Guided Retention (CGR), a plug-and-play regularizer that uses a frozen sparse autoencoder to reduce forgetting during parameter-efficient fine-tuning. Evaluated it on 10 vision tasks with CLIP ViT-B/32 and on instruction tuning of Llama-3.1-8B, where it improved retention for six existing adapters at comparable accuracy."
   },
   {
-    role: "Graduate Research Assistant",
+    role: "Graduate Teaching Assistant",
+    company: "University of California, Davis",
+    period: "Jan 2026 - June 2026",
+    desc: "Teaching assistant for ECS 193A/B Senior Capstone Design, with 21 students."
+  },
+  {
+    role: "Graduate Research Assistant / Research Associate",
     company: "CIDA Lab, Tennessee State University",
-    period: "Aug 2023 - June 2025",
-    desc: "Implemented and enhanced deep learning algorithms for image and tabular data. Investigated domain adaptation strategies."
+    period: "Aug 2023 - Aug 2025",
+    desc: "Proposed DeepIFSAC, an attention-based imputation framework with contrastive learning that outperformed 9 state-of-the-art imputers (Knowledge-Based Systems, 2025), and LATTLE, which transfers frozen attention weights from a fine-tuned DistilGPT2 to a tabular transformer across domains with no shared features (arXiv:2511.06161). Also worked on contrastive and cluster-based domain adaptation."
   },
   {
     role: "Machine Learning Engineer",
-    company: "Apurba Technologies Ltd.",
+    company: "Apurba Technologies Inc.",
     period: "July 2021 - Jan 2023",
-    desc: "Implemented ML systems for OCR and document analysis. Researched adversarial attacks for Bengali OCR."
+    desc: "Worked on the OCR detection and segmentation team on Bengali character detection and document layout segmentation with a multi-headed CNN (IEEE Big Data 2021; ICPR 2022). Owned the model deployment pipeline, serving models in Docker containers through Flask/FastAPI APIs and cutting inference time by 30%."
   },
   {
     role: "Lecturer",
@@ -103,20 +110,26 @@ const SERVICE = [
 
 const NEWS = [
   {
+    date: "October 2026",
+    content: "Our paper on Concept-Guided Retention (CGR), which uses sparse autoencoder concepts to reduce forgetting in parameter-efficient fine-tuning, is now on arXiv.",
+    type: "Preprint",
+    color: "from-emerald-500 to-green-500"
+  },
+  {
     date: "June 2026",
-    content: "Will be attending CVPR 2026 for the XAI Workshop.",
+    content: "Presented 'A Benchmark Study on the Reliability of Explainability Methods' at the CVPR 2026 XAI4CV Workshop in Denver.",
     type: "Conference",
     color: "from-blue-500 to-cyan-500"
   },
   {
     date: "December 2025",
-    content: "Attended NeurIPS'2025",
+    content: "Attended NeurIPS 2025.",
     type: "Conference",
     color: "from-blue-500 to-cyan-500"
   },
-  { 
-    date: "Fall 2025", 
-    content: "Started my Ph.D. in Computer Science at UC Davis.", 
+  {
+    date: "Fall 2025",
+    content: "Started my Ph.D. in Computer Science at UC Davis as a GGCS Ignite Fellow.",
     type: "Milestone",
     color: "from-blue-500 to-cyan-500"
   },
@@ -136,13 +149,31 @@ const NEWS = [
 
 const PUBLICATIONS = [
   {
+    id: "cgr-2026",
+    title: "Confine to the Task, Anchor the Rest: Concept-Guided Retention Regularizer for Parameter-Efficient Fine-Tuning",
+    authors: "I Kowsar, I Medri, F Meng, X Liu",
+    venue: "arXiv preprint arXiv:2610.17713",
+    year: 2026,
+    link: "https://arxiv.org/abs/2610.17713",
+    tags: ["Interpretability", "Sparse Autoencoders", "PEFT"]
+  },
+  {
     id: "xai-cvpr-2026",
     title: "A Benchmark Study on the Reliability of Explainability Methods",
-    authors: "I Kowsar",
-    venue: "CVPR 2026 Workshop on Explainable AI (XAI)",
+    authors: "I Kowsar, S Rezaei, F Meng, X Liu",
+    venue: "CVPR 2026 Workshops, Explainable AI for Computer Vision (XAI4CV), pp. 4037-4046",
     year: 2026,
-    link: "",
+    link: "https://openaccess.thecvf.com/content/CVPR2026W/XAI4CV/html/Kowsar_A_Benchmark_Study_on_the_Reliability_of_Explainability_Methods_CVPRW_2026_paper.html",
     tags: ["XAI", "Explainability", "Benchmark"]
+  },
+  {
+    id: "nn-2026",
+    title: "Generalized Context in Cross Attention for Transfer Learning of Disjoint Tabular Data",
+    authors: "KFB Akhter, I Kowsar, MD Samad",
+    venue: "Neural Networks, 109568",
+    year: 2026,
+    link: "https://arxiv.org/abs/2608.28209",
+    tags: ["Transfer Learning", "Tabular Data"]
   },
   {
     id: "deepifsac-2025",
@@ -155,7 +186,7 @@ const PUBLICATIONS = [
   },
   {
     id: "llm-transplant-2025",
-    title: "LLM Attention Transplant for Transfer Learning of Tabular Data Across Disparate Domains",
+    title: "LATTLE: LLM Attention Transplant for Transfer Learning of Tabular Data Across Disparate Domains",
     authors: "I Kowsar, KF Akhter, MD Samad",
     venue: "arXiv preprint arXiv:2511.06161",
     year: 2025,
